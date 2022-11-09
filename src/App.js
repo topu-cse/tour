@@ -6,8 +6,9 @@ import Home from './component/Home/Home/Home';
 import Login from './component/Login/Login';
 import Register from './component/Register/Register';
 
-import Privatrouts from './Routed/Privatrouts';
-import Products from './Products';
+
+
+import Blog from './component/Blog/Blog';
 function App() {
   const router=createBrowserRouter([
     {
@@ -20,7 +21,7 @@ function App() {
           path:'/login',element:<Login></Login>
         },
         {
-          path:'/products',element:<Products></Products>
+          path:'/blog',element:<Blog></Blog>
         },
        {
         path:'/register',element:<Register></Register>

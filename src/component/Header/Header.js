@@ -2,6 +2,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/Usercontext';
+ import './Header.css';
+ import logo from '../../image/logo.png'
 
 
 const Header = () => {
@@ -17,13 +19,15 @@ const handleSignOut=()=>{
     return (
         <div>
            
-<div className="navbar bg-primary  text-primary-content">
-  <Link to='/' className="btn btn-ghost normal-case text-xl">Navber</Link>
-  <Link className="btn btn-ghost normal-case text-xl" to='/'>Home</Link>
-  <Link className="btn btn-ghost normal-case text-xl" to='/products'>Products</Link>
+<div className="navbar bg-primary  text-primary-content nav-logo">
+  <Link to='/' className=""> <img src={logo} alt="" /> Dream Tour</Link>
+<div className='navber-link'>
+<Link className="btn btn-ghost normal-case text-xl" to='/'>Home</Link>
+  <Link className="btn btn-ghost normal-case text-xl" to='/blog'>Blog</Link>
+</div>
   
   
-  {user?.email && <span>welcome, {user.email}</span>}
+  {user?.email && <span> {user.email}</span>}
   {
     user?.email?
     <button onClick={handleSignOut} className="btn btn-ghost normal-case text-xl">Sign out</button>
@@ -34,6 +38,13 @@ const handleSignOut=()=>{
   </div>
   }
 </div>
+
+
+
+
+
+
+
         </div>
     );
 };
