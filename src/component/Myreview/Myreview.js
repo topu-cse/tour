@@ -28,7 +28,7 @@ const Myreview = () => {
         }
 
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://tourist-server-ten.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

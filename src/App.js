@@ -32,7 +32,7 @@ function App() {
        {
         path:'/myreview/:id',
         element:<Myreview></Myreview>,
-        loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+        loader:({params})=>fetch(`https://tourist-server-ten.vercel.app/services/${params.id}`)
        },
        {
             path:'/reviewshow',
@@ -44,7 +44,7 @@ function App() {
       },
       {
         path:'/service/add',
-        element:<AddService></AddService>
+        element:<PrivateRoute><AddService></AddService></PrivateRoute>
       }
       ]
     }

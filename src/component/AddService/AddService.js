@@ -5,7 +5,7 @@ const AddService = () => {
     const handleAddUser=event=>{
         event.preventDefault();
  console.log(service)
- fetch('http://localhost:5000/services',{
+ fetch('https://tourist-server-ten.vercel.app/services',{
      method: 'POST', // or 'PUT'
      headers: {
        'Content-Type': 'application/json',

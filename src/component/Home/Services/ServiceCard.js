@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
- import PrivateRoute from '../../../Routed/Privatrouts.js'
+
  import './ServiceCard.css'
  
 const ServiceCard = ({ service }) => {
@@ -14,11 +14,10 @@ const ServiceCard = ({ service }) => {
                 <p>{description}</p>
                 <p className='text-2xl text-orange-600 font-semibold'>Price: {price}</p>
                 <div className="card-actions justify-end">
-                <PrivateRoute>
                 <Link to={`/myreview/${_id}`}>
 <button className="btn btn-primary">Details</button>
 </Link>
-                </PrivateRoute>
+                
                 </div>
             </div>
         </div>
