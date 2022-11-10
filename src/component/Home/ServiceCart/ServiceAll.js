@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import'./ServiceAll.css'
 const ServiceAll = ({service}) => {
     const { _id, img, price, name,description } = service;
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
-            <figure><img src={img} alt="" /></figure>
+        <div className="card card-compact w-96 bg-base-100 shadow-xl service-card">
+            <figure  ><img src={img} alt="" /></figure>
          
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>

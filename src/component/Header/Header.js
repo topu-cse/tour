@@ -24,6 +24,7 @@ const handleSignOut=()=>{
 <div className='navber-link'>
 <Link className="btn btn-ghost normal-case text-xl" to='/'>Home</Link>
   <Link className="btn btn-ghost normal-case text-xl" to='/reviewshow'>My Review</Link>
+  <Link className="btn btn-ghost normal-case text-xl" to='/service/add'>Add Service</Link>
   <Link className="btn btn-ghost normal-case text-xl" to='/blog'>Blog</Link>
 </div>
   

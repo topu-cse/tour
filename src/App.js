@@ -10,6 +10,7 @@ import Myreview from './component/Myreview/Myreview';
 import ReviewShow from './component/ReviewShow/ReviewShow';
 import ServiceCart from './component/Home/ServiceCart/ServiceCart';
 import PrivateRoute from './Routed/Privatrouts';
+import AddService from './component/AddService/AddService';
 
 function App() {
   const router=createBrowserRouter([
@@ -40,6 +41,10 @@ function App() {
       {
         path:'/service',
         element:<ServiceCart></ServiceCart>
+      },
+      {
+        path:'/service/add',
+        element:<AddService></AddService>
       }
       ]
     }

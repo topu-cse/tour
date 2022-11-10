@@ -32,7 +32,7 @@ const Services = () => {
 
             <div className='mt-5 text-center'>
                 <Link to='/service'>
-                <button className='rounded'>
+                <button className="btn  btn-success m-6">
                     views all
             </button>
             </Link>
