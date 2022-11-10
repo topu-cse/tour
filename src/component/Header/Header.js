@@ -34,8 +34,7 @@ const handleSignOut=()=>{
     <button onClick={handleSignOut} className="btn btn-ghost normal-case text-xl">Sign out</button>
   
   :<div>
-    <Link to='/login' className="btn btn-ghost normal-case text-xl">Login </Link>
-  <Link className="btn btn-ghost normal-case text-xl" to='/register'>Register</Link>
+   
   </div>
   }
 </div>
