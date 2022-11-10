@@ -12,15 +12,15 @@ const Myreview = () => {
         event.preventDefault();
         const form = event.target;
         const email = user?.email || 'unregistered';
-        const name = user?.displayName;
+        const username = user?.displayName;
      
         const message = form.message.value;
         const reviewimg=user?.photoURL;
         const reviews = {
             service: _id,
             serviceName: name,
-      
-            revieweName: name,
+           
+            revieweName:username,
             email,
             reviewimg,
             message
@@ -60,7 +60,7 @@ const Myreview = () => {
                 <p>{description}</p>
                 <h4 className="text-3xl">Price: {price}</h4>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                    <input name="name" type="text" placeholder="name" defaultValue={user?.displayName} className="input input-ghost w-full  input-bordered" readOnly />
+                    <input name="username" type="text" placeholder="name" defaultValue={user?.displayName} className="input input-ghost w-full  input-bordered" readOnly />
                    
                     <input name="reviewimg" type="text" placeholder="photoURl" defaultValue={user?.photoURL} className="input input-ghost w-full  input-bordered" readOnly />
                     <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />

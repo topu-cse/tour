@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/Usercontext';
+import Review from './Review';
 
 const ReviewShow = () => {
     const {user}=useContext(AuthContext)
@@ -58,7 +59,34 @@ const ReviewShow = () => {
    
     return (
         <div>
-           <h2>reviews{reviews.length}</h2>
+            <h2 className="text-5xl text-center m-8">I have {reviews.length}reviews</h2>
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full m-5 w-90">
+                    <thead>
+                        <tr>
+                            <th>
+                            </th>
+                            <th>user name</th>
+                            <th> Tour Area</th>
+                         
+                            <th>Review</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            reviews.map(review=><Review
+                            
+                            key={review._id}
+                            review={review}
+                            
+                            >
+
+                            </Review>)
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
