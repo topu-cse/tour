@@ -7,6 +7,7 @@ import Login from './component/Login/Login';
 import Register from './component/Register/Register';
 import Blog from './component/Blog/Blog';
 import Myreview from './component/Myreview/Myreview';
+import ReviewShow from './component/ReviewShow/ReviewShow';
 function App() {
   const router=createBrowserRouter([
     {
@@ -28,6 +29,10 @@ function App() {
         path:'/myreview/:id',
         element:<Myreview></Myreview>,
         loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+       },
+       {
+            path:'/reviewshow',
+            element:<ReviewShow></ReviewShow>
        }
       ]
     }

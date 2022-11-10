@@ -11,9 +11,9 @@ const Myreview = () => {
     const handlePlacemyreview = event => {
         event.preventDefault();
         const form = event.target;
-        const name = `${form.firstName.value} ${form.lastName.value}`;
         const email = user?.email || 'unregistered';
-       
+        const name = user?.displayName;
+     
         const message = form.message.value;
         const reviewimg=user?.photoURL;
         const reviews = {
@@ -25,6 +25,26 @@ const Myreview = () => {
             reviewimg,
             message
         }
+
+
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reviews)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.acknowledged){
+                    alert('Review placed successfully')
+                    form.reset();
+                    
+                }
+            })
+            .catch(er => console.error(er));
+
 
 
 
@@ -40,7 +60,7 @@ const Myreview = () => {
                 <p>{description}</p>
                 <h4 className="text-3xl">Price: {price}</h4>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                    <input name="name" type="text" placeholder="name" className="input input-ghost w-full  input-bordered" />
+                    <input name="name" type="text" placeholder="name" defaultValue={user?.displayName} className="input input-ghost w-full  input-bordered" readOnly />
                    
                     <input name="reviewimg" type="text" placeholder="photoURl" defaultValue={user?.photoURL} className="input input-ghost w-full  input-bordered" readOnly />
                     <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
