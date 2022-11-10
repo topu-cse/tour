@@ -5,10 +5,8 @@ import Main from './component/Layout/Main'
 import Home from './component/Home/Home/Home';
 import Login from './component/Login/Login';
 import Register from './component/Register/Register';
-
-
-
 import Blog from './component/Blog/Blog';
+import Myreview from './component/Myreview/Myreview';
 function App() {
   const router=createBrowserRouter([
     {
@@ -25,6 +23,11 @@ function App() {
         },
        {
         path:'/register',element:<Register></Register>
+       },
+       {
+        path:'/myreview/:id',
+        element:<Myreview></Myreview>,
+        loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
        }
       ]
     }
