@@ -17,9 +17,11 @@ const googleProvider=new GoogleAuthProvider();
 
 const createUser=(email,password)=>{
     return createUserWithEmailAndPassword(auth,email,password)
+    
 }
 const signin=(email,password)=>{
     return signInWithEmailAndPassword(auth,email,password)
+
 }
 
 const logOut=()=>{

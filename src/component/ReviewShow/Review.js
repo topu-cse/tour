@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 
 const Review = ({ review, handleDelete, handleStatusUpdate }) => {
     
-        const { _id, serviceName,reviewimg,message,revieweName,service } = review;
-        const [orderService, setOrderService] = useState({})
+        const { _id, serviceName,reviewimg,message,revieweName,service,status } = review;
+        // const [orderService, setOrderService] = useState({})
     
-        useEffect(() => {
-            fetch(`http://localhost:5000/services/${service}`)
-                .then(res => res.json())
-                .then(data => setOrderService(data));
-        }, [service])
+        // useEffect(() => {
+        //     fetch(`http://localhost:5000/services/${service}`)
+        //         .then(res => res.json())
+        //         .then(data => setOrderService(data));
+        // }, [service])
    
 
     
@@ -45,12 +45,14 @@ const Review = ({ review, handleDelete, handleStatusUpdate }) => {
                
             </td>
             <td><div> {message}</div></td>
-            {/* <td>Purple</td>
+
+
+            
             <th>
                 <button 
                 onClick={() => handleStatusUpdate(_id)}
                 className="btn btn-ghost btn-xs">{status ? status : 'pending'}</button>
-            </th> */}
+            </th>
         </tr>
     );
 };
