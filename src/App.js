@@ -9,6 +9,7 @@ import Blog from './component/Blog/Blog';
 import Myreview from './component/Myreview/Myreview';
 import ReviewShow from './component/ReviewShow/ReviewShow';
 import ServiceCart from './component/Home/ServiceCart/ServiceCart';
+import PrivateRoute from './Routed/Privatrouts';
 
 function App() {
   const router=createBrowserRouter([
@@ -34,7 +35,7 @@ function App() {
        },
        {
             path:'/reviewshow',
-            element:<ReviewShow></ReviewShow>
+            element:<PrivateRoute><ReviewShow></ReviewShow></PrivateRoute>
        },
       {
         path:'/service',
