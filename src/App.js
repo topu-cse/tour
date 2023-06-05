@@ -23,9 +23,7 @@ function App() {
         {
           path:'/login',element:<Login></Login>
         },
-        {
-          path:'/blog',element:<Blog></Blog>
-        },
+       
        {
         path:'/register',element:<Register></Register>
        },
